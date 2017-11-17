@@ -20,7 +20,7 @@ CONTEXT_SETTINGS = {'token_normalize_func': lambda x: x.upper()}
                    'Potential Sizes: [20, 40, 80, 100, 250, '
                    '500, 1000, 2000, 4000, 8000, 12000] '
                    'Minimum: [the size of the origin volume] '
-                   'Maximum: [the minimum of 12000 GB.')
+                   'Maximum: [12000 GB.')
 @click.option('--new-iops', '-i',
               type=int,
               help='Performance Storage IOPS, between 100 and 6000 in '
