@@ -78,11 +78,13 @@ def cli(env, volume_id):
 
     if file_volume['activeTransactions']:
         for trans in file_volume['activeTransactions']:
-            table.add_row([
-                'Ongoing Transactions',
-                trans['transactionStatus']['friendlyName']])
+            if  trans['transactionStatus'] and trans['transactionStatus']['friendlyName']:
+                table.add_row([
+                    'Ongoing Transactions',
+                    trans['transactionStatus']['friendlyName']])
 
-    table.add_row(['Replicant Count', "%u"
+    if file_volume['replicationPartnerCount']:
+        table.add_row(['Replicant Count', "%u"
                    % file_volume['replicationPartnerCount']])
 
     if file_volume['replicationPartnerCount'] > 0:
