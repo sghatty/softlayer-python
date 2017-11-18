@@ -1080,7 +1080,6 @@ def prepare_modify_order_object(manager, origin_volume, new_iops, new_tier,
         'packageId': package['id'],
         'prices': prices,
         'volume': origin_volume,
-        #'useHourlyPricing' : 'true',
         'volumeSize': new_size
     }
 
@@ -1179,6 +1178,7 @@ def _validate_dupl_endurance_tier(origin_volume, duplicate_tier):
                 "duplicate volume performance tier must also be above 0.25 "
                 "IOPS/GB. %s IOPS/GB requested." % duplicate_tier)
     return duplicate_tier
+
 
 def _validate_new_size(origin_volume, new_volume_size,
                        volume_type):
