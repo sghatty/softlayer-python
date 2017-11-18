@@ -105,7 +105,7 @@ def cli(env, volume_id):
         if block_volume.get('originalVolumeSize'):
 
             origin_volume_info = formatting.Table(['Property',
-                                'Value'])
+                                                   'Value'])
             origin_volume_info.add_row(['Original Volume Size',
                                         block_volume['originalVolumeSize']])
         if block_volume.get('originalVolumeName'):

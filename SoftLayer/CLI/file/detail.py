@@ -78,14 +78,14 @@ def cli(env, volume_id):
 
     if file_volume['activeTransactions']:
         for trans in file_volume['activeTransactions']:
-            if  trans['transactionStatus'] and trans['transactionStatus']['friendlyName']:
+            if trans['transactionStatus'] and trans['transactionStatus']['friendlyName']:
                 table.add_row([
                     'Ongoing Transactions',
                     trans['transactionStatus']['friendlyName']])
 
     if file_volume['replicationPartnerCount']:
         table.add_row(['Replicant Count', "%u"
-                   % file_volume['replicationPartnerCount']])
+                       % file_volume['replicationPartnerCount']])
 
     if file_volume['replicationPartnerCount'] > 0:
         # This if/else temporarily handles a bug in which the SL API
@@ -123,7 +123,7 @@ def cli(env, volume_id):
         if file_volume.get('originalVolumeSize'):
 
             origin_volume_info = formatting.Table(['Property',
-                                'Value'])
+                                                   'Value'])
             origin_volume_info.add_row(['Original Volume Size',
                                         file_volume['originalVolumeSize']])
         if file_volume.get('originalVolumeName'):
